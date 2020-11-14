@@ -269,3 +269,4 @@ pip-selfcheck.json
 .tool-versions
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm+all,vscode,virtualenv,git,python
+*.swp
