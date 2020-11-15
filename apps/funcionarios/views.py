@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from apps.funcionarios.models import Funcionario
+from django.views.generic.edit import CreateView
 
-# Create your views here.
+
+class FuncionarioCreate(CreateView):
+    model = Funcionario
+    fields = "__all__"
