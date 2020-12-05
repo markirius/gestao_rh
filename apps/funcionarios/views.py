@@ -1,7 +1,16 @@
 from apps.funcionarios.models import Funcionario
-from django.views.generic.edit import CreateView
+from django.views.generic import CreateView, ListView
 
 
-class FuncionarioCreate(CreateView):
+class FuncionariosCreate(CreateView):
     model = Funcionario
     fields = "__all__"
+
+
+class FuncionariosList(ListView):
+    model = Funcionario
+
+    def get_queryset(self):
+        empresa = self.request.user.funcionario.empresa
+        queryset = Funcionario.objects.filter(empresa=empresa)
+        return queryset

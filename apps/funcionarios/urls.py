@@ -1,7 +1,8 @@
 from django.urls import path
-from apps.funcionarios.views import FuncionarioCreate
+from apps.funcionarios.views import FuncionariosCreate, FuncionariosList
 
 
 urlpatterns = [
-    path('novo', FuncionarioCreate.as_view(), name="create_funcionario"),
+    path('', FuncionariosList.as_view(), name="list_funcionario"),
+    path('novo', FuncionariosCreate.as_view(), name="create_funcionario"),
 ]
