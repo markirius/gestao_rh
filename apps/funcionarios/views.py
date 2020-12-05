@@ -10,6 +10,7 @@ class FuncionariosCreate(CreateView):
 class FuncionariosList(ListView):
     model = Funcionario
 
+    # listar apenas funcionários da empresa do usuário logado
     def get_queryset(self):
         empresa = self.request.user.funcionario.empresa
         queryset = Funcionario.objects.filter(empresa=empresa)
