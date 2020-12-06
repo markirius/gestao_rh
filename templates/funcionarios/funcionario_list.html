@@ -6,4 +6,5 @@ Lista de funcionários</br>
     <a href="{% url 'update_funcionario' funcionario.pk %}">{{ funcionario }}</a>
     <a href="{% url 'delete_funcionario' funcionario.pk %}">Deletar</a></br>
 {% endfor %}
+<a href="{% url 'create_funcionario' %}" class="btn btn-info">Novo</a>
 {% endblock %}

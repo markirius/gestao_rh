@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block main %}
-Editar funcionario:</br>
+Funcionario:</br>
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Editar</button>
+    <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 {% endblock %}
