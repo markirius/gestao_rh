@@ -29,7 +29,9 @@ class DepartamentoList(ListView):
 
 
 class DepartamentoEdit(UpdateView):
-    pass
+    model = Departamento
+    fields = ["nome"]
+    success_url = reverse_lazy("list_departamento")
 
 
 class DepartamentoDelete(DeleteView):

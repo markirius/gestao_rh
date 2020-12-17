@@ -41,6 +41,7 @@ class FuncionarioList(ListView):
 class FuncionarioEdit(UpdateView):
     model = Funcionario
     fields = ["nome", "departamentos"]
+    success_url = reverse_lazy("list_funcionario")
 
 
 class FuncionarioDelete(DeleteView):
