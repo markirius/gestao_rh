@@ -13,6 +13,7 @@ from apps.funcionarios.models import Funcionario
 class FuncionarioCreate(CreateView):
     model = Funcionario
     fields = ["nome", "departamentos"]
+    success_url = reverse_lazy("list_funcionario")
 
     def form_valid(self, form):
         funcionario = form.save(commit=False)

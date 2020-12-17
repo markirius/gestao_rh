@@ -9,7 +9,15 @@ from django.views.generic import (
 
 
 class DepartamentoCreate(CreateView):
-    pass
+    model = Departamento
+    fields = ["nome"]
+    success_url = reverse_lazy("list_departamento")
+
+    def form_valid(self, form):
+        departamento = form.save(commit=False)
+        departamento.empresa = self.request.user.funcionario.empresa
+        departamento.save()
+        return super(DepartamentoCreate, self).form_valid(form)
 
 
 class DepartamentoList(ListView):
