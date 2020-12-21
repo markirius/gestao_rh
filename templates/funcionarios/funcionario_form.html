@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block main %}
 Funcionario:</br>
 <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Salvar</button>
+  {% csrf_token %}
+  {{ form|bootstrap }}
+  <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
+{% if object %}
+	<a href="{% url 'create_documento' object.pk %}" class="btn btn-success">Adicionar documento</a>
+	{% for documento in funcionario.documento_set.all %}
+		<br/><a href="{{ documento.arquivo.url }}">{{ documento.descricao }}</a>
+	{% endfor %}
+{% endif %}
 {% endblock %}

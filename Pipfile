@@ -5,10 +5,12 @@ name = "pypi"
 
 [packages]
 django = "~=2.2.16"
+django-bootstrap-form = "~=3.4"
 
 [dev-packages]
 flake8 = "*"
 black = "*"
+django-extensions = "*"
 
 [requires]
 python_version = "3.6"

@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from apps.funcionarios.models import Funcionario
 
 
@@ -7,6 +8,10 @@ class Documento(models.Model):
     pertence = models.ForeignKey(
         Funcionario, on_delete=models.PROTECT
     )
+    arquivo = models.FileField(upload_to="documents")
+
+    def get_absolute_url(self):
+        return reverse("update_funcionario", args=[self.pertence.pk])
 
     def __str__(self):
         return self.descricao

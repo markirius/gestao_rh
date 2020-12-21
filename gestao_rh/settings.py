@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'apps.documentos',
     'apps.horas_extra',
     'apps.departamentos',
+
+    'bootstrapform',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,8 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'login'
+
+# Media settings
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

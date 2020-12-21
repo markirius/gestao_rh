@@ -9,7 +9,7 @@ from apps.funcionarios.views import (
 
 urlpatterns = [
     path('', FuncionarioList.as_view(), name="list_funcionario"),
-    path('novo', FuncionarioCreate.as_view(), name="create_funcionario"),
+    path('novo/', FuncionarioCreate.as_view(), name="create_funcionario"),
     path(
         'editar/<int:pk>',
         FuncionarioEdit.as_view(),
